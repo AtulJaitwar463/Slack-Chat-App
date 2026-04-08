@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slack_chat_app/models/chat_channel.dart';
+import 'package:slack_chat_app/theme/app_colors.dart';
 
 class ChannelTile extends StatelessWidget {
   const ChannelTile({
@@ -24,9 +25,7 @@ class ChannelTile extends StatelessWidget {
         duration: const Duration(milliseconds: 180),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
         decoration: BoxDecoration(
-          color: isSelected
-              ? const Color(0xFF1164A3)
-              : Colors.transparent,
+          color: isSelected ? AppColors.sky : Colors.transparent,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -62,7 +61,7 @@ class ChannelTile extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: isSelected
                               ? Colors.white.withValues(alpha: 0.82)
-                              : const Color(0xFFC9B6CD),
+                              : AppColors.textOnDarkSoft,
                         ),
                   ),
                 ],
@@ -94,7 +93,7 @@ class _UnreadBadge extends StatelessWidget {
       child: Text(
         '$count',
         style: Theme.of(context).textTheme.labelLarge?.copyWith(
-              color: const Color(0xFF611F69),
+              color: AppColors.plum,
               fontWeight: FontWeight.w800,
             ),
       ),

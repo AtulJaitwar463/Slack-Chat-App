@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slack_chat_app/models/app_user.dart';
+import 'package:slack_chat_app/theme/app_colors.dart';
 
 class UserTile extends StatelessWidget {
   const UserTile({
@@ -24,9 +25,7 @@ class UserTile extends StatelessWidget {
         duration: const Duration(milliseconds: 180),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
         decoration: BoxDecoration(
-          color: isSelected
-              ? const Color(0xFF1164A3)
-              : Colors.transparent,
+          color: isSelected ? AppColors.sky : Colors.transparent,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -59,10 +58,10 @@ class UserTile extends StatelessWidget {
                     width: 12,
                     height: 12,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF22C55E),
+                      color: AppColors.green,
                       borderRadius: BorderRadius.circular(999),
                       border: Border.all(
-                        color: const Color(0xFF111827),
+                        color: AppColors.textPrimary,
                         width: 2,
                       ),
                     ),
@@ -94,7 +93,7 @@ class UserTile extends StatelessWidget {
                 child: Text(
                   '$unreadCount',
                   style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                        color: const Color(0xFF611F69),
+                        color: AppColors.plum,
                         fontWeight: FontWeight.w800,
                       ),
                 ),

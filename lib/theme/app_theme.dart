@@ -1,52 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slack_chat_app/theme/app_colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
     final baseTextTheme = GoogleFonts.dmSansTextTheme();
 
     final colorScheme = ColorScheme.fromSeed(
-      seedColor: const Color(0xFF611F69),
+      seedColor: AppColors.plum,
       brightness: Brightness.light,
     );
 
     return ThemeData(
       useMaterial3: true,
       colorScheme: colorScheme,
-      scaffoldBackgroundColor: const Color(0xFFF4F4F8),
+      scaffoldBackgroundColor: AppColors.scaffold,
       textTheme: baseTextTheme.copyWith(
         displaySmall: baseTextTheme.displaySmall?.copyWith(
           fontWeight: FontWeight.w800,
-          color: const Color(0xFF1D1C1D),
+          color: AppColors.textPrimary,
           letterSpacing: -1.4,
         ),
         headlineMedium: baseTextTheme.headlineMedium?.copyWith(
           fontWeight: FontWeight.w800,
-          color: const Color(0xFF1D1C1D),
+          color: AppColors.textPrimary,
         ),
         titleLarge: baseTextTheme.titleLarge?.copyWith(
           fontWeight: FontWeight.w800,
-          color: const Color(0xFF1D1C1D),
+          color: AppColors.textPrimary,
         ),
         bodyLarge: baseTextTheme.bodyLarge?.copyWith(
-          color: const Color(0xFF3F3F46),
+          color: AppColors.textBody,
         ),
         bodyMedium: baseTextTheme.bodyMedium?.copyWith(
-          color: const Color(0xFF616061),
+          color: AppColors.textSecondary,
         ),
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
-        foregroundColor: const Color(0xFF1D1C1D),
+        foregroundColor: AppColors.textPrimary,
         centerTitle: false,
         titleTextStyle: baseTextTheme.titleLarge?.copyWith(
           fontWeight: FontWeight.w800,
-          color: const Color(0xFF1D1C1D),
+          color: AppColors.textPrimary,
         ),
       ),
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
-          backgroundColor: const Color(0xFF611F69),
+          backgroundColor: AppColors.plum,
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -58,19 +59,19 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: const Color(0xFFFFFFFF),
+        fillColor: AppColors.surface,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Color(0xFFD8D8DE)),
+          borderSide: const BorderSide(color: AppColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Color(0xFFD8D8DE)),
+          borderSide: const BorderSide(color: AppColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(
-            color: Color(0xFF611F69),
+            color: AppColors.plum,
             width: 1.4,
           ),
         ),
@@ -91,7 +92,7 @@ class AppTheme {
         ),
       ),
       cardTheme: CardThemeData(
-        color: Colors.white,
+        color: AppColors.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
